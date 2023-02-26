@@ -151,8 +151,9 @@ def listen(address, settrace_kwargs):
     # and handling exceptions, and we don't want to spam their stderr unnecessarily.
 
     import subprocess
+    import binascii
 
-    server_access_token = compat.force_str(codecs.encode(os.urandom(32), "hex"))
+    server_access_token = compat.force_str(binascii.hexlify(os.urandom(32)))
 
     try:
         endpoints_listener = sockets.create_server("127.0.0.1", 0, timeout=10)

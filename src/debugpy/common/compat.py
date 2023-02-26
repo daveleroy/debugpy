@@ -41,7 +41,7 @@ else:
     unicode = str
     xrange = range
     izip = zip
-    from importlib import reload  # noqa
+    from imp import reload  # noqa
     import queue  # noqa
 
     def force_str(s, encoding="ascii", errors="strict"):
